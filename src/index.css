@@ -1,13 +1,176 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --big-font: "Montserrat", sans-serif;
+  --small-font: "Prompt", sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+
+.container {
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+}
+
+#root {
+  width: 68%;
+  position: absolute;
+  left: 410px;
+  top: 0;
+}
+
+.toggle {
+  border: none;
+  outline: none;
+  font-family: var(--big-font);
+  padding: 10px;
+  background: #ea6674;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.App {
+  padding: 5px;
+}
+
+.page-title {
+  font-family: var(--big-font);
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: 600;
+  color: #3a0115;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 200px;
+  margin: 8px 0 28px 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-size: contain;
+  border-radius: 8px;
+  padding: 20px;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.card .competition {
+  font-family: var(--big-font);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.date {
+  font-family: var(--small-font);
+  padding-top: 2.5px;
+  color: #ea6674;
+}
+
+.club-name {
+  font-family: var(--small-font);
+  padding-top: 50px;
+}
+
+.nav {
+  margin-left: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-lists {
+  width: 50px;
+  text-align: center;
+  background: #ea6674;
+  color: whitesmoke;
+  padding: 10px;
+  margin: 5px;
+  font-family: var(--small-font);
+  cursor: pointer;
+}
+
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.active {
+  background: #63030e;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#wiglet {
+  width: 400px;
+}
+
+@media (max-width: 500px) {
+  body {
+    position: static;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    width: 100%;
+    position: static;
+  }
+
+  #wiglet {
+    width: 100%;
+  }
+
+  .toggle,
+  .card {
+    margin-left: 0;
+  }
+
+  .page-title {
+    padding-left: 0;
+  }
+
+  .card {
+    min-width: 100%;
+    height: 170px;
+  }
+
+  #root {
+    width: 100%;
+    position: static;
+    left: 0;
+  }
+
+  .nav-links {
+    justify-content: left;
+  }
 }
